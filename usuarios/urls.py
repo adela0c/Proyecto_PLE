@@ -1,0 +1,14 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+
+    path('', views.login_view, name='login'),
+
+    path('alumnos/', views.alumnos_view, name='alumnos'),
+
+    path('agregar/', views.agregar_view, name='agregar'),
+
+    path('subir/', views.subir_view, name='subir'),
+
+]
