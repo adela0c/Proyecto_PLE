@@ -1,0 +1,226 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Informacion del Alumno</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <h2>LENGUAS EXTRANJERAS</h2>
+
+        <div class="user-section">
+            <img src="{% static 'img/user.png' %}" alt="">
+            <div>
+                <p>Sesión iniciada con:</p>
+                <span>Usuario 1</span>
+            </div>
+
+            <i class="fa-solid fa-right-from-bracket logout-icon"></i>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR -->
+    <div class="main-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <img src="{% static 'img/logo_ut.png' %}" class="logo">
+
+            <nav>
+
+                <a href="/">
+                    <i class="fa-solid fa-house"></i>
+                    Inicio
+                </a>
+
+                <a href="/alumnos/">
+                    <i class="fa-solid fa-user"></i>
+                    Consultar Alumnos
+                </a>
+
+                <a href="/subir/">
+                    <i class="fa-solid fa-users"></i>
+                    Subir Calificaciones
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- CONTENIDO -->
+        <main class="content">
+
+            <div class="content-header">
+
+                <h1>Agregar Informacion</h1>
+
+                <div class="buttons">
+
+                    <button class="btn-update">
+                        Actualizar
+                    </button>
+
+                    <button class="btn-save">
+                        Guardar
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- FORMULARIO -->
+            <div class="form-container">
+
+                <!-- CREDENCIAL -->
+                <div class="credential-preview">
+
+                    <p>Vista previa del alumno</p>
+
+                    <img src="{% static 'img/credencial.png' %}" alt="">
+
+                </div>
+
+                <!-- CAMPOS -->
+                <form class="employee-form">
+
+                    <div class="form-grid">
+
+                        <div class="input-group">
+                            <label>Nombre</label>
+                            <input type="text" placeholder="Escribe aquí">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Apellido</label>
+                            <input type="text" value="Quintos Negrete">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Título</label>
+                            <input type="text" value="Puesto">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Puesto</label>
+                            <input type="text" value="Jefe de administración">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Jefe</label>
+                            <select>
+                                <option>Jefe</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Negocio</label>
+                            <select>
+                                <option>Venta</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Departamento</label>
+                            <select>
+                                <option>Talento y cultura</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Fecha de ingreso</label>
+                            <input type="date">
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- CAMPOS EXTRA -->
+            <div class="extra-fields">
+
+                <div class="input-group">
+                    <label>RFC</label>
+                    <input type="text" value="N569874">
+                </div>
+
+                <div class="input-group">
+                    <label>NDC</label>
+                    <input type="text" value="352">
+                </div>
+
+                <div class="input-group">
+                    <label>NSS</label>
+                    <input type="text" value="4247504521">
+                </div>
+
+            </div>
+
+            <div class="input-group full-width">
+                <label>Dirección del trabajo</label>
+                <input type="text" value="Av. Enrique Ramírez Miguel, N. 701">
+            </div>
+
+            <div class="extra-fields">
+
+                <div class="input-group">
+                    <label>Codigo QR</label>
+                    <input type="text" value="https.link.qr.arturo">
+                </div>
+
+                <div class="input-group">
+                    <label>Dirección</label>
+                    <input type="text" value="C. Benito Juarez, N.32">
+                </div>
+
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" value="arturo.citelis@mail.mx">
+                </div>
+
+            </div>
+
+            <div class="extra-fields">
+
+                <div class="input-group">
+                    <label>Empresa</label>
+                    <select>
+                        <option>Esfera</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Diseño de credencial</label>
+                    <select>
+                        <option>Citelis</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Teléfono</label>
+                    <input type="text" value="4433505012">
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
