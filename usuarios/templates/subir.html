@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Subir Archivo</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+        <h2>LENGUAS EXTRANJERAS</h2>
+
+        <div class="user-section">
+
+            <img src="{% static 'img/user.png' %}" alt="">
+
+            <div>
+                <p>Sesión iniciada con:</p>
+                <span>Usuario 1</span>
+            </div>
+
+            <i class="fa-solid fa-right-from-bracket logout-icon"></i>
+
+        </div>
+
+    </header>
+
+    <!-- MAIN -->
+    <div class="main-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <img src="{% static 'img/logo_ut.png' %}" class="logo">
+
+            <nav>
+
+                <a href="/">
+                    <i class="fa-solid fa-house"></i>
+                    Inicio
+                </a>
+
+                <a href="/alumnos/">
+                    <i class="fa-solid fa-user"></i>
+                    Consultar Colaboradores
+                </a>
+
+                <a href="/agregar/">
+                    <i class="fa-solid fa-users"></i>
+                    Informacion Alumno
+                </a>
+
+            </nav>
+
+        </aside>
+
+        <!-- CONTENIDO -->
+        <main class="content upload-content">
+
+            <h1>Subir Archivo</h1>
+
+            <p class="upload-text">
+                Sube el PDF de tu pago realizado.
+            </p>
+
+            <div class="upload-box">
+
+                <i class="fa-solid fa-cloud-arrow-up upload-cloud"></i>
+
+                <button class="upload-btn">
+                    Subir Archivo
+                </button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
