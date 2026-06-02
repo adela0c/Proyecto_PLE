@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -147,7 +149,7 @@
     <div class="sidebar">
 
         <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Logo_UTM.png/600px-Logo_UTM.png" alt="">
+            <img src="{% static 'img/logo_ut.png' %}" alt="">
         </div>
 
         <div class="menu">
@@ -209,8 +211,8 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Curso</th>
-                        <th>Matricula</th>
-                        <th>Dirección</th>
+                        <th>Nivel</th>
+                        <th>Categoria</th>
                         <th>Número</th>
                     </tr>
 
@@ -224,8 +226,8 @@
 
                         <td>{{ alumno.nombre }}</td>
                         <td>{{ alumno.curso }}</td>
-                        <td>{{ alumno.matricula }}</td>
-                        <td>{{ alumno.direccion }}</td>
+                        <td>{{ alumno.nivel }}</td>
+                        <td>{{ alumno.categoria }}</td>
                         <td>{{ alumno.numero }}</td>
 
                     </tr>
