@@ -11,4 +11,6 @@ urlpatterns = [
 
     path('subir/', views.subir_view, name='subir'),
 
+    path('login/', views.login_view, name= 'login'),
+
 ]
