@@ -1,236 +1,205 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="es">
+{% block title %}
+Registrar Alumno
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Informacion del Alumno</title>
+{% block content %}
 
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<div class="content-header">
 
-    <!-- ICONOS -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    <h1>Registrar Alumno</h1>
 
-<body>
+    <div class="buttons">
 
-    <!-- TOPBAR -->
-    <header class="topbar">
-        <h2>LENGUAS EXTRANJERAS</h2>
+        <button type="submit" form="formAlumno" class="btn-save">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Guardar
+        </button>
 
-        <div class="user-section">
-            <img src="{% static 'img/user.png' %}" alt="">
-            <div>
-                <p>Sesión iniciada con:</p>
-                <span>Usuario 1</span>
-            </div>
-
-            <i class="fa-solid fa-right-from-bracket logout-icon"></i>
-        </div>
-    </header>
-
-    <!-- CONTENEDOR -->
-    <div class="main-container">
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-
-            <img src="{% static 'img/logo_ut.png' %}" class="logo">
-
-            <nav>
-
-                <a href="/">
-                    <i class="fa-solid fa-house"></i>
-                    Inicio
-                </a>
-
-                <a href="/alumnos/">
-                    <i class="fa-solid fa-user"></i>
-                    Consultar Alumnos
-                </a>
-
-                <a href="/subir/">
-                    <i class="fa-solid fa-users"></i>
-                    Subir Calificaciones
-                </a>
-
-            </nav>
-
-        </aside>
-
-        <!-- CONTENIDO -->
-        <main class="content">
-
-            <div class="content-header">
-
-                <h1>Agregar Informacion</h1>
-
-                <div class="buttons">
-
-                    <button class="btn-update">
-                        Actualizar
-                    </button>
-
-                    <button class="btn-save">
-                        Guardar
-                    </button>
-
-                </div>
-
-            </div>
-
-            <!-- FORMULARIO -->
-            <div class="form-container">
-
-                <!-- CREDENCIAL -->
-                <div class="credential-preview">
-
-                    <p>Vista previa del alumno</p>
-
-                    <img src="{% static 'img/credencial.png' %}" alt="">
-
-                </div>
-
-                <!-- CAMPOS -->
-                <form class="employee-form">
-
-                    <div class="form-grid">
-
-                        <div class="input-group">
-                            <label>Nombre</label>
-                            <input type="text" placeholder="Escribe aquí">
-                        </div>
-
-                        <div class="input-group">
-                            <label>Apellido</label>
-                            <input type="text" placeholder="Escribe aquí">
-                        </div>
-
-                        <div class="input-group">
-                            <label>Periodo</label>
-                            <input type="text" placeholder="Enero-Abril">
-                        </div>
-
-                        <div class="input-group">
-                            <label>Idioma</label>
-                            <input type="text" placeholder="Inglés/Frances">
-                        </div>
-
-                        <div class="input-group">
-                            <label>Categoria</label>
-                            <select>
-                                <option selected disabled>
-                                    Seleccione una opcion
-                                </option>
-                                <option>Estudiantes UTM</option>
-                                <option>Trabajador de Estado</option>
-                                <option>Hijos de Trabajadores</option>
-                                <option>Publico General</option>
-                                <option></option>
-                            </select>
-                        </div>
-
-                        <div class="input-group">
-                            <label>Nivel</label>
-                            <input type="text" placeholder="Avanzado 1">
-                        </div>
-
-                        <div class="input-group">
-                            <label>Departamento</label>
-                            <input type="text" placeholder="">
-                        </div>
-
-                        <div class="input-group">
-                            <label>Fecha de ingreso</label>
-                            <input type="date">
-                        </div>
-
-                    </div>
-
-                </form>
-
-            </div>
-
-            <!-- CAMPOS EXTRA -->
-            <div class="extra-fields">
-
-                <div class="input-group">
-                    <label>Sexo</label>
-                    <select>
-                        <option selected disabled>
-                            Seleccione una opcion
-                        </option>
-
-                        <option>Hombre</option>
-                        <option>Mujer</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label>Edad</label>
-                    <input type="text" placeholder="32">
-                </div>
-
-                <div class="input-group">
-                    <label>NSS</label>
-                    <input type="text" placeholder="4247504521">
-                </div>
-
-            </div>
-
-            <div class="input-group full-width">
-                <label>Dirección personal</label>
-                <input type="text" placeholder="Av. Acueducto #88">
-            </div>
-
-            <div class="extra-fields">
-
-                <div class="input-group">
-                    <label>Codigo QR</label>
-                    <input type="text" placeholder="https.link.qr.arturo">
-                </div>
-
-                <div class="input-group">
-                    <label>Dirección</label>
-                    <input type="text" placeholder="C. Benito Juarez, N.32">
-                </div>
-
-                <div class="input-group">
-                    <label>E-mail</label>
-                    <input type="email" placeholder="juanrdgz@gmail.com">
-                </div>
-
-            </div>
-
-            <div class="extra-fields">
-
-                <div class="input-group">
-                    <label>Empresa</label>
-                    <select>
-                        <option>Esfera</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label>Diseño de credencial</label>
-                    <select>
-                        <option>Citelis</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label>Teléfono</label>
-                    <input type="text" placeholder="4433505012">
-                </div>
-
-            </div>
-
-        </main>
+        <a href="/alumnos/" class="btn-update" style="text-decoration:none; display:flex; align-items:center;">
+            <i class="fa-solid fa-table" style="margin-right:8px;"></i>
+            Consultar
+        </a>
 
     </div>
 
-</body>
+</div>
 
-</html>
+<form id="formAlumno" class="employee-form" method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <div class="form-container">
+
+        <!-- FOTO -->
+
+        <div class="credential-preview">
+
+            <p style="margin-bottom:20px;"><strong>Fotografía del alumno</strong></p>
+
+            <img src="{% static 'img/user.png' %}" alt="Alumno">
+
+            <br><br>
+
+            <input
+                type="file"
+                name="foto"
+                accept="image/*">
+
+        </div>
+
+        <!-- CAMPOS -->
+
+        <div style="flex:1;">
+
+            <div class="form-grid">
+
+                <div class="input-group">
+
+                    <label>Nombre</label>
+
+                    <input
+                        type="text"
+                        name="nombre"
+                        placeholder="Nombre del alumno"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Apellido paterno</label>
+
+                    <input
+                        type="text"
+                        name="apellido_paterno"
+                        placeholder="Apellido paterno"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Apellido materno</label>
+
+                    <input
+                        type="text"
+                        name="apellido_materno"
+                        placeholder="Apellido materno"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Correo electrónico</label>
+
+                    <input
+                        type="email"
+                        name="correo"
+                        placeholder="correo@ejemplo.com"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Teléfono</label>
+
+                    <input
+                        type="text"
+                        name="telefono"
+                        placeholder="4431234567"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Fecha de nacimiento</label>
+
+                    <input
+                        type="date"
+                        name="fecha_nacimiento"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Nombre del tutor</label>
+
+                    <input
+                        type="text"
+                        name="tutor_nombre"
+                        placeholder="Tutor">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Teléfono del tutor</label>
+
+                    <input
+                        type="text"
+                        name="tutor_telefono"
+                        placeholder="4431234567">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Categoría</label>
+
+                    <select
+                        name="categoria"
+                        required>
+
+                        <option disabled selected>
+                            Seleccione una categoría
+                        </option>
+
+                        {% for categoria in categorias %}
+
+                        <option value="{{ categoria.id }}">
+
+                            {{ categoria.nombre }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Status</label>
+
+                    <select name="status">
+
+                        <option value="True" selected>
+                            Activo
+                        </option>
+
+                        <option value="False">
+                            Inactivo
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
+
+{% endblock %}

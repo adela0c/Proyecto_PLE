@@ -5,6 +5,8 @@ urlpatterns = [
 
     path('', views.login_view, name='login'),
 
+    path('inicio/', views.inicio,name='inicio'),
+
     path('alumnos/', views.alumnos_view, name='alumnos'),
 
     path('agregar/', views.agregar_view, name='agregar'),
@@ -12,5 +14,11 @@ urlpatterns = [
     path('subir/', views.subir_view, name='subir'),
 
     path('login/', views.login_view, name= 'login'),
+
+    path('parcial/', views.parcial, name='parcial'),
+
+    path('niveles/', views.niveles, name='niveles'),
+
+    path ('base/', views.base, name='base'),
 
 ]

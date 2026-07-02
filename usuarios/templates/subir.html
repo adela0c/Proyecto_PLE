@@ -45,7 +45,7 @@
 
             <nav>
 
-                <a href="/">
+                <a href="/inicio/">
                     <i class="fa-solid fa-house"></i>
                     Inicio
                 </a>
@@ -57,7 +57,7 @@
 
                 <a href="/agregar/">
                     <i class="fa-solid fa-users"></i>
-                    Informacion Alumno
+                    Información Alumno
                 </a>
 
             </nav>
@@ -73,19 +73,80 @@
                 Sube el PDF de tu pago realizado.
             </p>
 
-            <div class="upload-box">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
 
-                <i class="fa-solid fa-cloud-arrow-up upload-cloud"></i>
+                <div class="upload-box">
 
-                <button class="upload-btn">
-                    Subir Archivo
-                </button>
+                    <i class="fa-solid fa-cloud-arrow-up upload-cloud"></i>
 
-            </div>
+                    <!-- Input oculto -->
+                    <input
+                        type="file"
+                        id="archivo"
+                        name="archivo"
+                        accept=".pdf"
+                        hidden
+                    >
+
+                    <!-- Botón para seleccionar archivo -->
+                    <button
+                        type="button"
+                        id="btnSeleccionar"
+                        class="upload-btn"
+                    >
+                        Seleccionar archivo
+                    </button>
+
+                    <!-- Nombre del archivo -->
+                    <p
+                        id="nombreArchivo"
+                        style="display:none; margin-top:15px;"
+                    ></p>
+
+                    <!-- Botón para subir -->
+                    <button
+                        type="submit"
+                        id="btnSubir"
+                        class="upload-btn"
+                        style="display:none; margin-top:15px;"
+                    >
+                        Subir
+                    </button>
+
+                </div>
+
+            </form>
 
         </main>
 
     </div>
+
+    <script>
+
+        const archivo = document.getElementById('archivo');
+        const btnSeleccionar = document.getElementById('btnSeleccionar');
+        const btnSubir = document.getElementById('btnSubir');
+        const nombreArchivo = document.getElementById('nombreArchivo');
+
+        btnSeleccionar.addEventListener('click', () => {
+            archivo.click();
+        });
+
+        archivo.addEventListener('change', function () {
+
+            if (this.files.length > 0) {
+
+                nombreArchivo.textContent = '📄 ' + this.files[0].name;
+
+                btnSeleccionar.style.display = 'none';
+                nombreArchivo.style.display = 'block';
+                btnSubir.style.display = 'inline-block';
+            }
+
+        });
+
+    </script>
 
 </body>
 
