@@ -8,7 +8,7 @@ __pycache__/
 *.pyd
 
 # Base de datos
-db.sqlite3
+
 
 # Variables de entorno
 .env
