@@ -1,116 +1,67 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="es">
+{% block title %}
+Inicio
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio</title>
+{% block content %}
 
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<div class="welcome-section">
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    <h1>Bienvenido Profesor</h1>
 
-<body>
+    <p>
+        Selecciona una opción para continuar.
+    </p>
 
-    <!-- TOPBAR -->
-    <header class="topbar">
+</div>
 
-        <h2>LENGUAS EXTRANJERAS</h2>
+<div class="cards-container">
 
-        <div class="user-section">
+    <a href="/agregar/" class="dashboard-card">
 
-            <img src="{% static 'img/user.png' %}" alt="Usuario">
+        <i class="fa-solid fa-user"></i>
 
-            <div>
-                <p>Sesión iniciada con:</p>
-                <span>Usuario 1</span>
-            </div>
+        <h2>Mi Perfil</h2>
 
-            <i class="fa-solid fa-right-from-bracket logout-icon"></i>
+        <p>
 
-        </div>
+            Consulta y actualiza tu información.
 
-    </header>
+        </p>
 
-    <!-- CONTENEDOR -->
-    <div class="main-container">
+    </a>
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
+    <a href="/alumnos/" class="dashboard-card">
 
-            <img src="{% static 'img/logo_ut.png' %}" class="logo">
+        <i class="fa-solid fa-users"></i>
 
-            <nav>
+        <h2>Alumnos</h2>
 
-                <a href="/inicio/">
-                    <i class="fa-solid fa-house"></i>
-                    Inicio
-                </a>
+        <p>
 
-                <a href="/alumnos/">
-                    <i class="fa-solid fa-user"></i>
-                    Consultar Alumnos
-                </a>
+            Consulta y administra los alumnos.
 
-                <a href="/subir/">
-                    <i class="fa-solid fa-users"></i>
-                    Subir Calificaciones
-                </a>
+        </p>
 
-            </nav>
+    </a>
 
-        </aside>
+    <a href="/subir/" class="dashboard-card">
 
-        <!-- CONTENIDO -->
-        <main class="content">
+        <i class="fa-solid fa-file-arrow-up"></i>
 
-            <div class="welcome-section">
+        <h2>Calificaciones</h2>
 
-                <h1>Bienvenido Profesor!</h1>
+        <p>
 
-                <p>
-                    Selecciona una opción para continuar.
-                </p>
+            Registrar calificaciones.
 
-            </div>
+        </p>
 
-            <div class="cards-container">
+    </a>
 
-                <!-- PERFIL -->
-                <a href="/agregar/" class="dashboard-card">
+</div>
 
-                    <i class="fa-solid fa-user"></i>
-
-                    <h2>Mi Perfil</h2>
-
-                    <p>
-                        Consulta y actualiza tu información personal.
-                    </p>
-
-                </a>
-
-                <!-- CURSO -->
-                <a href="/alumnos/" class="dashboard-card">
-
-                    <i class="fa-solid fa-file-pen"></i>
-
-                    <h2>Curso Asignado</h2>
-
-                    <p>
-                        Consulta la lista de alumnos registrados y administra tu curso.
-                    </p>
-
-                </a>
-
-            </div>
-
-        </main>
-
-    </div>
-
-</body>
-
-</html>
+{% endblock %}

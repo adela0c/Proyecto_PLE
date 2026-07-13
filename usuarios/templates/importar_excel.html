@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Importar Alumnos
+{% endblock %}
+
+{% block content %}
+
+<div class="content-header">
+
+    <h1>Importar alumnos desde Excel</h1>
+
+    <div class="buttons">
+
+        <a href="{% static 'excel/plantilla_alumnos.xlsx' %}"
+           class="btn-update"
+           download
+           style="text-decoration:none; display:flex; align-items:center;">
+
+            <i class="fa-solid fa-download" style="margin-right:8px;"></i>
+
+            Descargar plantilla
+
+        </a>
+
+    </div>
+
+</div>
+
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <div class="table-container" style="padding:40px;">
+
+        <div style="text-align:center; margin-bottom:35px;">
+
+            <i class="fa-solid fa-file-excel"
+               style="font-size:90px; color:#1D6F42;"></i>
+
+            <h2 style="margin-top:20px;">
+                Importación masiva de alumnos
+            </h2>
+
+            <p style="margin-top:10px; color:gray;">
+
+                Selecciona un archivo Excel con el formato oficial
+                para registrar alumnos automáticamente.
+
+            </p>
+
+        </div>
+
+        <div style="text-align:center;">
+
+            <input
+                type="file"
+                id="archivo"
+                name="archivo"
+                accept=".xlsx,.xls"
+                hidden>
+
+            <button
+                type="button"
+                class="btn-save"
+                id="btnSeleccionar">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                Seleccionar Excel
+
+            </button>
+
+            <p
+                id="nombreArchivo"
+                style="margin-top:20px; font-weight:bold; display:none;">
+            </p>
+
+            <br>
+
+            <button
+                type="submit"
+                id="btnImportar"
+                class="btn-update"
+                style="display:none; margin-top:25px;">
+
+                <i class="fa-solid fa-upload"></i>
+
+                Importar alumnos
+
+            </button>
+
+        </div>
+
+    </div>
+
+</form>
+
+<script>
+
+const archivo = document.getElementById("archivo");
+
+const btnSeleccionar = document.getElementById("btnSeleccionar");
+
+const nombreArchivo = document.getElementById("nombreArchivo");
+
+const btnImportar = document.getElementById("btnImportar");
+
+
+btnSeleccionar.addEventListener("click", function(){
+
+    archivo.click();
+
+});
+
+
+archivo.addEventListener("change", function(){
+
+    if(this.files.length > 0){
+
+        nombreArchivo.innerHTML =
+            "📄 " + this.files[0].name;
+
+        nombreArchivo.style.display = "block";
+
+        btnImportar.style.display = "inline-block";
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

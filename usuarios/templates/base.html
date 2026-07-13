@@ -8,12 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Lenguas Extranjeras{% endblock %}</title>
 
-    <!-- CSS genral -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-    <!-- iconos -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     {% block extra_css %}
     {% endblock %}
@@ -21,71 +19,80 @@
 
 <body>
 
-    <!-- TOPBAR -->
-    <header class="topbar">
+<header class="topbar">
 
-        <h2>LENGUAS EXTRANJERAS</h2>
+    <h2>LENGUAS EXTRANJERAS</h2>
 
-        <div class="user-section">
+    <div class="user-section">
 
-            <img src="{% static 'img/user.png' %}" alt="Usuario">
+        <img src="{% static 'img/user.png' %}" alt="Usuario">
 
-            <div>
-                <p>Sesión iniciada con:</p>
-                <span>Usuario 1</span>
-            </div>
-
-            <i class="fa-solid fa-right-from-bracket logout-icon"></i>
-
+        <div>
+            <p>Sesión iniciada con:</p>
+            <span>Usuario 1</span>
         </div>
 
-    </header>
-
-    <!-- CONTENEDOR PRINCIPAL -->
-    <div class="main-container">
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-
-            <img src="{% static 'img/logo_ut.png' %}"
-                alt="Logo UTM"
-                class="logo">
-
-            <nav>
-
-                <a href="/">
-                    <i class="fa-solid fa-house"></i>
-                    Inicio
-                </a>
-
-                <a href="/alumnos/">
-                    <i class="fa-solid fa-user-graduate"></i>
-                    Consultar Alumnos
-                </a>
-
-                <a href="/agregar/">
-                    <i class="fa-solid fa-circle-info"></i>
-                    Información Alumno
-                </a>
-
-                <a href="/subir/">
-                    <i class="fa-solid fa-file-arrow-up"></i>
-                    Subir Calificaciones
-                </a>
-
-            </nav>
-
-        </aside>
-
-        <!-- contenido de cda vista -->
-        <main class="content">
-
-            {% block content %}
-            {% endblock %}
-
-        </main>
+        <i class="fa-solid fa-right-from-bracket logout-icon"></i>
 
     </div>
+
+</header>
+
+<div class="main-container">
+
+    <aside class="sidebar">
+
+        <img src="{% static 'img/logo_ut.png' %}"
+             class="logo"
+             alt="Logo">
+
+        <nav>
+
+            <a href="{% url 'inicio' %}">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="{% url 'alumnos' %}">
+                <i class="fa-solid fa-user-graduate"></i>
+                Consultar Alumnos
+            </a>
+
+            <a href="{% url 'agregar' %}">
+                <i class="fa-solid fa-circle-info"></i>
+                Registrar Alumno
+            </a>
+
+            <a href="/importar-excel/">
+                <i class="fa-solid fa-file-excel"></i>
+                Importar Excel
+            </a>
+
+            <a href="{% url 'subir' %}">
+                <i class="fa-solid fa-file-arrow-up"></i>
+                Subir Documentos
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main class="content">
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="mensaje {{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+</div>
 
 </body>
 

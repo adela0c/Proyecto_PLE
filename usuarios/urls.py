@@ -3,22 +3,40 @@ from . import views
 
 urlpatterns = [
 
-    path('', views.login_view, name='login'),
+    # LOGIN
+    path("", views.login_view, name="login"),
+    path("login/", views.login_view, name="login"),
 
-    path('inicio/', views.inicio,name='inicio'),
+    # DASHBOARD
+    path("inicio/", views.inicio_view, name="inicio"),
 
-    path('alumnos/', views.alumnos_view, name='alumnos'),
+    # ALUMNOS
+    path("alumnos/", views.alumnos_view, name="alumnos"),
+    path("agregar/", views.agregar_view, name="agregar"),
 
-    path('agregar/', views.agregar_view, name='agregar'),
+    path(
+        "alumno/editar/<int:id>/",
+        views.editar_alumno,
+        name="editar_alumno"
+    ),
 
-    path('subir/', views.subir_view, name='subir'),
+    path(
+        "alumno/eliminar/<int:id>/",
+        views.eliminar_alumno,
+        name="eliminar_alumno"
+    ),
 
-    path('login/', views.login_view, name= 'login'),
+    # DOCUMENTOS
+    path("subir/", views.subir_view, name="subir"),
 
-    path('parcial/', views.parcial, name='parcial'),
+    # ALUMNO
+    path("niveles/", views.niveles_view, name="niveles"),
+    path("parcial/", views.parcial_view, name="parcial"),
 
-    path('niveles/', views.niveles, name='niveles'),
-
-    path ('base/', views.base, name='base'),
+    path(
+    "importar-excel/",
+    views.importar_excel_view,
+    name="importar_excel"
+),
 
 ]

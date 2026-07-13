@@ -1,109 +1,41 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Niveles</title>
+{% block title %}
+Cursos
+{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% block content %}
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
+<h1 class="page-title">
 
-<header class="topbar">
-    <h2>LENGUAS EXTRANJERAS</h2>
+Cursos y Certificaciones
 
-    <div class="user-section">
-        <img src="{% static 'img/user.png' %}" alt="">
-        <div>
-            <p>Sesión iniciada con:</p>
-            <span>Alumno</span>
-        </div>
-    </div>
-</header>
+</h1>
 
-<div class="main-container">
+<div class="niveles-grid">
 
-    <aside class="sidebar">
+    <a href="/parcial/" class="nivel-card"><h2>Básico 1</h2></a>
 
-        <img src="{% static 'img/logo_ut.png' %}" class="logo">
+    <a href="/parcial/" class="nivel-card"><h2>Básico 2</h2></a>
 
-        <nav>
+    <a href="/parcial/" class="nivel-card"><h2>Básico 3</h2></a>
 
-            <a href="/inicio/">
-                <i class="fa-solid fa-house"></i>
-                Inicio
-            </a>
+    <a href="/parcial/" class="nivel-card"><h2>Intermedio 1</h2></a>
 
-            <a href="/parcial/">
-                <i class="fa-solid fa-graduation-cap"></i>
-                parciales
-            </a>
+    <a href="/parcial/" class="nivel-card"><h2>Intermedio 2</h2></a>
 
-        </nav>
+    <a href="/parcial/" class="nivel-card"><h2>Intermedio 3</h2></a>
 
-    </aside>
+    <a href="/parcial/" class="nivel-card"><h2>Avanzado 1</h2></a>
 
-    <main class="content">
+    <a href="/parcial/" class="nivel-card"><h2>Avanzado 2</h2></a>
 
-        <h1 class="page-title">
-            Cursos y Certificaciones
-        </h1>
+    <a href="/parcial/" class="nivel-card"><h2>Avanzado 3</h2></a>
 
-        <div class="niveles-grid">
+    <a href="/parcial/" class="nivel-card"><h2>TOEFL</h2></a>
 
-            <a href="/parcial/" class="nivel-card">
-                <h2>Básico 1</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Básico 2</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Básico 3</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Intermedio 1</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Intermedio 2</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Intermedio 3</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Avanzado 1</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Avanzado 2</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Avanzado 3</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Certificación TOEFL</h2>
-            </a>
-
-            <a href="/parcial/" class="nivel-card">
-                <h2>Certificación TOEIC</h2>
-            </a>
-
-        </div>
-
-    </main>
+    <a href="/parcial/" class="nivel-card"><h2>TOEIC</h2></a>
 
 </div>
 
-</body>
-</html>
+{% endblock %}

@@ -537,3 +537,35 @@ body{
     }
 
 }
+
+/*=========================
+MENSAJES
+=========================*/
+
+.mensaje{
+
+    padding:15px;
+
+    border-radius:8px;
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+
+}
+
+.success{
+
+    background:#d4edda;
+
+    color:#155724;
+
+}
+
+.error{
+
+    background:#f8d7da;
+
+    color:#721c24;
+
+}
